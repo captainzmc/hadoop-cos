@@ -496,5 +496,6 @@ public class CosFileSystem extends FileSystem {
             this.nativeStore.close();
         }
         this.healthyFlag = false;
+        super.close();
     }
 }
