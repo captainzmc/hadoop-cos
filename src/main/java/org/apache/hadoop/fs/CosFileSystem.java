@@ -483,9 +483,9 @@ public class CosFileSystem extends FileSystem {
     }
 
     private void healthyCheck() throws IOException {
-        if (!this.healthyFlag) {
-            throw new IOException("fileSystem has been closed or not init");
-        }
+//        if (!this.healthyFlag) {
+//            throw new IOException("fileSystem has been closed or not init");
+//        }
     }
 
     @Override
@@ -495,7 +495,7 @@ public class CosFileSystem extends FileSystem {
         if (null != this.nativeStore && this.isDefaultNativeStore) {
             this.nativeStore.close();
         }
-        this.healthyFlag = false;
         super.close();
+        this.healthyFlag = false;
     }
 }
